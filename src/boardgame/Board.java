@@ -28,4 +28,11 @@ public class Board {		//não retorna uma matriz inteira, somente uma peça por vez
 		this.columns = columns;
 	}
 
+	public Piece piece(int row, int column) {	//retorna a matriz na linha e coluna informada
+		return pieces[row][column];
+	}
+	
+	public Piece piece(Position position) {	//retorna a peça pela posição(classe Position)
+		return pieces[position.getRow()][position.getColumn()];
+	}
 }
