@@ -35,4 +35,9 @@ public class Board {		//não retorna uma matriz inteira, somente uma peça por vez
 	public Piece piece(Position position) {	//retorna a peça pela posição(classe Position)
 		return pieces[position.getRow()][position.getColumn()];
 	}
+	
+	public void placePiece(Piece piece, Position position) {		//coloca essa peça nessa posição
+		pieces[position.getRow()][position.getColumn()] = piece; 		//essa matriz de peças é a que está declarada aqui no tabuleiro e ja foi instanciada no construtor.
+		piece.position = position;
+	}
 }
