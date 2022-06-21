@@ -26,6 +26,12 @@ public class Position { //camada de tabuleiro
 		this.column = column;
 	}
 	
+	//atualiza os valores de uma posição
+	public void setValues(int row, int column) {
+		this.row = row;
+		this.column = column;
+	}
+	
 	//imprimir a posição na tela
 	@Override
 	public String toString() {

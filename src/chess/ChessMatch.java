@@ -29,6 +29,7 @@ public class ChessMatch { 	//é nessa classe que teremos as regras de xadrez
 		Position source = sourcePosition.toPosition(); //converte a posição de xadrez para posoção de matriz
 		Position target = targetPosition.toPosition();
 		validateSourcePosition(source); //validar se a posição de origem existe
+		validateTargetPosition(source, target); 	//valida posição de destino
 		Piece capturedPiece = makeMove(source, target); //makeMove será responsável por realizar o movimento da peça
 		return (ChessPiece) capturedPiece;
 	}
@@ -39,6 +40,12 @@ public class ChessMatch { 	//é nessa classe que teremos as regras de xadrez
 		}
 		if (!board.piece(position).isThereAnyPossibleMove()) { 	//verifica se há movimentos para a peça
 			throw new ChessException("There is no possible moves for the chosen piece");
+		}
+	}
+	
+	private void validateTargetPosition(Position source, Position target) {
+		if (!board.piece(source).possibleMove(target)) {
+			throw new ChessException("The chosen piece can't move to target position");
 		}
 	}
 	

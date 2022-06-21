@@ -62,7 +62,7 @@ public class Board {		//não retorna uma matriz inteira, somente uma peça por vez
 		return row >=0 && row < rows && column >=0 && column < columns;
 	}
 	
-	private boolean positionExists(Position position) {
+	public boolean positionExists(Position position) {
 		return positionExists(position.getRow(), position.getColumn());
 	}
 	
