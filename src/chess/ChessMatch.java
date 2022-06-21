@@ -24,6 +24,13 @@ public class ChessMatch { 	//é nessa classe que teremos as regras de xadrez
 		}
 		return mat;
 	}
+	
+	public boolean[][] possibleMoves(ChessPosition sourcePosition){
+		Position position = sourcePosition.toPosition(); 	//converte a posição de xadres p matriz
+		validateSourcePosition(position); 
+		return board.piece(position).possibleMoves();
+	}
+	
 	//move a peça de uma posição para outra
 	public ChessPiece performChessMove(ChessPosition sourcePosition, ChessPosition targetPosition) {
 		Position source = sourcePosition.toPosition(); //converte a posição de xadrez para posoção de matriz
