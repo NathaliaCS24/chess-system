@@ -16,6 +16,11 @@ public abstract class ChessPiece extends Piece{
 	public Color getColor() {
 		return color;
 	}
+	
+	//converte a posição de matriz em posição de xadrez
+	public ChessPosition getChessPosition() {
+		return ChessPosition.fromPosition(position);
+	}
 
 	protected boolean isThereOpponentPiece(Position position) {
 		ChessPiece p = (ChessPiece) getBoard().piece(position);
