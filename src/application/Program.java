@@ -19,7 +19,8 @@ public class Program {
 		ChessMatch chessMatch = new ChessMatch();  //instancia uma nova partida
 		List<ChessPiece> captured = new ArrayList<>();
 		
-		while(true) {
+		//enquanto não estiver com check mate o programa vai rodar
+		while(!chessMatch.getCheckMate()) {
 			try {
 				UI.clearScreen();
 				UI.printMatch(chessMatch, captured);		//imprime o tabuleiro com as peças(se houver)
@@ -49,5 +50,7 @@ public class Program {
 				sc.nextLine();
 			}
 		}
+		UI.clearScreen();
+		UI.printMatch(chessMatch, captured);
 	}
 }
